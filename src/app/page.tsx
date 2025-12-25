@@ -1,7 +1,10 @@
 import Link from 'next/link';
+export const dynamic = "force-dynamic";
 
 async function getNotes() {
-  const res = await fetch("http://localhost:3000/api/notes", { cache: "no-store" });
+  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/notes`, {
+    cache: "no-store",
+  });
   return res.json();
 }
 export default async function Home() {
