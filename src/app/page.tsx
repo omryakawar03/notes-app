@@ -1,4 +1,7 @@
 import Link from 'next/link';
+export const dynamic = "force-dynamic";
+export const revalidate = 0;        // forces runtime only
+export const fetchCache = "force-no-store"; // prevents static caching
 
 async function getNotes() {
   try {
