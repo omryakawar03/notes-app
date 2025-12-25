@@ -18,7 +18,7 @@ RUN pnpm build
 FROM node:20-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
-ENV NEXT_PUBLIC_APP_URL=http://localhost:3000
+
 
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
