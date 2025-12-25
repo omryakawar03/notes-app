@@ -5,7 +5,7 @@ export const fetchCache = "force-no-store"; // prevents static caching
 
 async function getNotes() {
   try {
-    const res = await fetch("/api/notes", { cache: "no-store" });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/notes`, { cache: "no-store" });
     if (!res.ok) throw new Error("Failed to fetch notes");
     return res.json();
   } catch (error) {

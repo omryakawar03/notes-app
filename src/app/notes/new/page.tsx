@@ -10,7 +10,7 @@ export default function NewNote() {
   const [tags, setTags] = useState("");
 
   async function submit() {
-    await fetch("/api/notes", {
+    await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/notes`, {
       method: "POST",
       body: JSON.stringify({ title, content, tags }),
     });
